@@ -23,16 +23,3 @@
 
 * * *
 
-### 推荐命名文件说明：
-
-你可以将该脚本保存为：
-
-1
-
-yt\_2k\_downloader.bat
-
-并在同一目录下确保有以下文件：
-
-*   `yt-dlp.exe`
-*   `ffmpeg.exe`
-*   `cookies.txt`（由浏览器导出）

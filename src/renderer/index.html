@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube 2K 视频下载器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YouTube 2K 视频下载器</h1>
+        
+        <!-- URL输入区域 -->
+        <div class="input-group">
+            <input type="text" id="videoUrl" placeholder="请输入YouTube视频URL" class="url-input">
+            <button id="fetchInfo" class="btn primary">获取信息</button>
+        </div>
+
+        <!-- Cookies文件选择（可选） -->
+        <div class="cookies-section">
+            <label>
+                <input type="checkbox" id="useCookies"> 使用Cookies文件（用于私有或会员视频）
+            </label>
+            <div id="cookiesGroup" class="input-group hidden">
+                <input type="text" id="cookiesPath" placeholder="选择cookies.txt文件" readonly>
+                <button id="selectCookies" class="btn secondary">选择文件</button>
+            </div>
+        </div>
+
+        <!-- 视频信息显示区域 -->
+        <div id="videoInfo" class="video-info hidden">
+            <div class="info-header">
+                <img id="thumbnail" alt="视频缩略图">
+                <div class="info-text">
+                    <h2 id="videoTitle"></h2>
+                    <p id="videoDetails"></p>
+                </div>
+            </div>
+            
+            <!-- 格式选择 -->
+            <div class="format-selection">
+                <h3>可用格式</h3>
+                <div class="format-group">
+                    <div class="format-item">
+                        <label>视频格式</label>
+                        <select id="formatSelect" class="format-select"></select>
+                    </div>
+                    <div class="format-item">
+                        <label>音频格式</label>
+                        <select id="audioFormatSelect" class="format-select"></select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下载区域 -->
+        <div id="downloadSection" class="download-section hidden">
+            <div class="input-group">
+                <input type="text" id="outputPath" placeholder="选择保存位置" readonly>
+                <button id="selectOutput" class="btn secondary">选择目录</button>
+            </div>
+            <button id="startDownload" class="btn primary">开始下载</button>
+            
+            <!-- 下载进度 -->
+            <div id="progressSection" class="progress-section hidden">
+                <div class="progress-bar">
+                    <div id="progressBar" class="progress"></div>
+                </div>
+                <p id="progressText">0%</p>
+                <p id="downloadStatus"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 错误提示 -->
+    <div id="errorToast" class="toast error hidden">
+        <span id="errorMessage"></span>
+        <button class="close-btn">&times;</button>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
